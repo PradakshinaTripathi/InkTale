@@ -1,0 +1,69 @@
+<!DOCTYPE html "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Google Books Embedded Viewer API Example</title>
+    <script
+            type="text/javascript"
+            src="https://www.google.com/books/jsapi.js"
+    ></script>
+    <script type="text/javascript">
+      google.books.load();
+      var viewer;
+
+      function nextPage() {
+        viewer.nextPage();
+      }
+
+      function previousPage() {
+        viewer.previousPage();
+      }
+
+      function zoomIn() {
+        viewer.zoomIn();
+      }
+
+      function zoomOut() {
+        viewer.zoomOut();
+      }
+      function handleGestureStart() {
+            // Implement gesture handling, e.g., enable pinch-to-zoom
+            var lastTouchEnd = 0;
+            document.addEventListener('touchend', function (event) {
+                var now = (new Date()).getTime();
+                if (now - lastTouchEnd <= 300) {
+                    event.preventDefault();
+                }
+                lastTouchEnd = now;
+            }, false);
+        }
+
+      function alertNotFound() {
+        alert("could not embed the book!");
+      }
+
+      function initialize(volumeId) {
+          console.log("Initializing with volume ID: " + volumeId);
+        viewer = new google.books.DefaultViewer(
+          document.getElementById("viewerCanvas")
+        );
+        viewer.load(volumeId, alertNotFound);
+        handleGestureStart();
+      }
+
+      google.books.setOnLoadCallback(initialize.bind(null, "replace"));
+    </script>
+    <style>
+        #viewerCanvas {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            touch-action: manipulation;
+        }
+    </style>
+</head>
+<body>
+<div id="viewerCanvas"></div>
+</body>
+</html>
