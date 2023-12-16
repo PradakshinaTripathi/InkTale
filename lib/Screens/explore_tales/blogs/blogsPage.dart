@@ -77,7 +77,10 @@ class _BlogPageState extends State<BlogPage> {
                           ListTile(
                           title: Text(snapshot.data!.docs[index]['Title'],
                             style: TextStyle(
-                              fontSize: 20, fontWeight: FontWeight.w500),),
+                              fontSize: 20, fontWeight: FontWeight.w500),
+                            overflow: TextOverflow.ellipsis,
+                            maxLines: 1,
+                          ),
                           subtitle: Text('${snapshot.data!.docs[index]['Description']}',
                             style: TextStyle(
                             fontWeight: FontWeight.w300,
