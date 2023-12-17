@@ -14,12 +14,17 @@ This project is a starting point for a Flutter application.
 # Explore Diverse Content: Discover stories spanning various genres and themes.
 
 Community Blogs: Share your thoughts, experiences, and creativity through personal blogs.
+
 User-Friendly Interface: Enjoy an intuitive platform designed for readers and writers of all levels.
+
 Inclusive Community: Connect with a diverse global community of like-minded individuals.
+
 Authorship Opportunities: Showcase your creativity by contributing your own stories and blogs.
+
 Interactive Reading: Engage with content through comments, likes, and community discussions.
 
 #Why Inktale?
+
 Inktale is more than an app; it's a thriving ecosystem where every voice matters. Whether you're passionate about reading or eager to share your stories, Inktale provides a welcoming space to explore, connect, and create.
 
 Get Started:
